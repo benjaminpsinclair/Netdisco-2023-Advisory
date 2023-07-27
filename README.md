@@ -76,3 +76,6 @@ To reproduce the vulnerability,  perform the following steps:
 6. Observe that the alert box has executed.
    
 ![mouseovercontact](https://github.com/benjaminpsinclair/Netdisco-CVE-2023-37623/assets/93361940/6de9f291-682b-48b4-bcc3-de006cfc2ee0)
+
+## Additional Credit
+Thanks to stanleyjobson <https://stanleyjobsonau.github.io>
