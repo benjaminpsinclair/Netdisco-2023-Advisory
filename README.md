@@ -38,12 +38,12 @@ To reproduce the vulnerability, perform the following steps:
 
 Note: There are other ways to inject a payload into the System Name without creating a pseudo device and requiring an admin login.
 
-For example an attacker may set up SNMP on their machine and inserts a Java Script payload as the Device Name, as in the configuration file below:
+For example an attacker may set up SNMP on their machine and insert a Java Script payload as the Device Name, as in the configuration file below:
 
 <img width="713" alt="SNMPconf" src="https://github.com/benjaminpsinclair/Netdisco-2023-Advisory/assets/93361940/5f2cf608-4f35-473a-a306-645be0ab5d48">
 
 
-To inject the payload into Netdisco it is possible to submit a discovery request for the attacker controlled IP. This can be done by enticing an administrator with a valid session can be enticed into clicking on a link that utilises the Open Redirect vulnerability from CVE 2023-37624, for example; 'https://netdiscoexample.host///attacker.host/csrf.html', where netdiscoexample.host is the Netdisco URL and attacker.host/csrf.html hosts the following HTML:
+To inject the payload into Netdisco it is possible to submit a discovery request for the attacker controlled IP. This can be done by enticing an administrator with a valid session into clicking on a link that utilises the Open Redirect vulnerability from CVE 2023-37624. For example; 'https://netdiscoexample.host///attacker.host/csrf.html', where netdiscoexample.host is the Netdisco URL and attacker.host/csrf.html is a malicious link containing the following HTML:
 
 ```html
 <body onload="document.form.submit()">
@@ -51,7 +51,7 @@ To inject the payload into Netdisco it is possible to submit a discovery request
 </form>
 </body>
 ```
-If the administrator clicks on this link then attacker's machine will be discovered and the payload loaded through SNMP and executed when the IP is entered in the search bar, as in the screenshot below.
+If the administrator clicks on this link then attacker's machine will be discovered, the payload loaded through SNMP and finally executed when the IP is entered in the search bar, as in the screenshot below.
 
 ![SNMPXSS](https://github.com/benjaminpsinclair/Netdisco-2023-Advisory/assets/93361940/28172d61-79bd-4f71-9eb8-b17a01456602)
 
