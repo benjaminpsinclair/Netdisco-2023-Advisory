@@ -17,7 +17,7 @@ This will redirect the user to Google after the login process is complete.
 Netdisco < 2.063000 was found to contain multiple stored cross-site scripting (XSS) vulnerabilities. An attacker may exploit this to perform unauthorised actions on behalf of a user.
 
 ## Technical Details
-A stored Cross-Site Scripting vulnerability was discovered in the main search box of the web applicaiton. This vulnerability is the result of insufficient sanitisation of the System Name device field. When a search for a device is performed by typing in an IP address, once at least three characters are entered in the search bar matching device System Names are presented in a drop down list by the typeahead feature. If the System Name contains HTML tags, the browser will interpret the contents as valid HTML.
+A stored Cross-Site Scripting vulnerability was discovered in the main search box of the web application. This vulnerability is the result of insufficient sanitisation of the System Name device field. When a search for a device is performed by typing in an IP address, once at least three characters are entered in the search bar matching device System Names are presented in a drop down list by the typeahead feature. If the System Name contains HTML tags, the browser will interpret the contents as valid HTML.
 
 To reproduce the vulnerability, perform the following steps:
 
